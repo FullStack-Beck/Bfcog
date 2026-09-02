@@ -64,21 +64,37 @@ nav a:hover, nav a.active { color: var(--accent); }
 .btn-outline:hover { background: rgba(255,255,255,0.12); }
 
 /* Hero Container Layering */
+/* 1. Hero Outer Wrapper */
 .hero-wrapper {
   position: relative;
   width: 100%;
-  min-height: 85vh;
+  /* Replace fixed vh heights with a natural aspect-ratio or auto height */
+  height: auto;
+  min-height: auto;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
 
-/* 1. Background Slideshow (Sits behind the frame) */
+/* 2. Torn Paper Frame Overlay */
+.hero-frame-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Change 'cover' to 'contain' if you NEVER want the edges cut off */
+  object-fit: fill; 
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 3. Background Slideshow Container */
 .slideshow-container {
   position: absolute;
   top: 0;
   right: 0;
-  width: 55%; /* Covers the right section */
+  width: 50%; /* Adjust width to match where the white space begins */
   height: 100%;
   z-index: 1;
 }
@@ -86,7 +102,7 @@ nav a:hover, nav a.active { color: var(--accent); }
 .slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
+  background-size: cover; /* Cover works here since it's just photos inside the cutout */
   background-position: center;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
