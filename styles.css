@@ -111,11 +111,12 @@ nav a:hover, nav a.active { color: var(--accent); }
 
 .hero-verse {
   font-family: 'Fraunces', serif;
-  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  /* Increased font size range from clamp(1.4rem, 2vw, 1.8rem) */
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem); 
   font-style: italic;
   font-weight: 500;
   color: #2D231E;
-  line-height: 1.35;
+  line-height: 1.25;
   margin: 10px 0 16px;
 }
 
