@@ -44,21 +44,32 @@
   </div>
 </header>
 
-<section class="hero" id="new">
-  <div class="wrap hero-inner">
-    <p class="eyebrow" style="color: var(--accent);">Welcome to Bristow First</p>
-    <p class="hero-verse">&ldquo;Come to me, all you who are weary and burdened, and I will give you rest.&rdquo;</p>
-    
-    <div class="hero-panel">
-      <div class="hero-times">
-        <div class="hero-times-list">
-          Sundays @ 10:45 AM &bull; Wednesdays @ 6:30 PM
-        </div>
-      </div>
-      <div class="hero-addr">320 S Walnut St, Bristow, OK 74010</div>
+<section class="hero-wrapper">
+  <!-- 1. The background slideshow container (fills the right side) -->
+  <div class="slideshow-container">
+    <div class="slide active" style="background-image: url('slide1.jpg');"></div>
+    <div class="slide" style="background-image: url('slide2.jpg');"></div>
+    <div class="slide" style="background-image: url('slide3.jpg');"></div>
+  </div>
+
+  <!-- 2. The torn-paper frame overlay (Your PNG/SVG image with transparent right side) -->
+  <img src="torn-paper-frame.png" class="hero-frame-overlay" alt="Hero background design" />
+
+  <!-- 3. The hero content positioned on top of the left side -->
+  <div class="wrap hero-content">
+    <div class="hero-text-block">
+      <div class="cross-icon">†</div>
+      <span class="eyebrow">WELCOME TO BRISTOW FIRST</span>
+      <h1 class="hero-verse">“Come to me, all you who are weary and burdened, and I will give you rest.”</h1>
+      
+      <p class="hero-info">
+        <strong>Sundays @ 10:45 AM • Wednesdays @ 6:30 PM</strong><br>
+        320 S Walnut St, Bristow, OK 74010
+      </p>
+
       <div class="hero-cta">
-        <a href="new.html" class="btn-primary">Plan A Visit</a>
-        <a href="#" class="btn-outline">Watch Live</a>
+        <a href="#visit" class="btn-primary">Plan A Visit</a>
+        <a href="#live" class="btn-outline-dark">Watch Live</a>
       </div>
     </div>
   </div>
@@ -165,6 +176,20 @@
       document.body.style.overflow = '';
     });
   }
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  function nextSlide() {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }
+
+  // Change image every 5 seconds
+  setInterval(nextSlide, 5000);
+});
 </script>
 </body>
 </html>
