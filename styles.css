@@ -184,13 +184,6 @@ footer { background: #171512; color: rgba(250,250,248,0.75); padding: 52px 0 24p
 .expect-item h4 { font-size: 1rem; margin-bottom: 4px; }
 .expect-item p { color: var(--ink-soft); font-size: 0.9rem; }
 
-@media (max-width: 900px) {
-  nav ul { display: none; }
-  .form-row { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .new-cta-grid { grid-template-columns: 1fr; }
-}
-
 /* ==========================================================
    Teachings page
    ========================================================== */
@@ -319,12 +312,118 @@ footer { background: #171512; color: rgba(250,250,248,0.75); padding: 52px 0 24p
   background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 14px 18px; font-size: 0.9rem;
 }
 
+/* ==========================================================
+   Responsive Breakpoints
+   ========================================================== */
+
+/* Tablet & Smaller Devices */
 @media (max-width: 900px) {
+  .wrap { padding: 0 20px; }
   .book-columns { grid-template-columns: 1fr; }
-  .staff-grid, .staff-grid.board, .ministries-grid, .testimony-grid { grid-template-columns: 1fr 1fr; }
-  .contact-layout { grid-template-columns: 1fr; }
+  .staff-grid, .staff-grid.board, .ministries-grid, .testimony-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  nav ul { gap: 12px 16px; }
 }
-@media (max-width: 560px) {
-  .staff-grid, .staff-grid.board, .ministries-grid, .testimony-grid { grid-template-columns: 1fr; }
+
+/* Mobile Phone Screens */
+@media (max-width: 600px) {
+  section { padding: 44px 0; }
+  
+  /* Navigation & Header */
+  .nav-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px 0;
+  }
+  .brand {
+    text-align: center;
+    white-space: normal;
+  }
+  nav ul {
+    justify-content: center;
+    gap: 10px 14px;
+  }
+  nav a {
+    font-size: 0.78rem;
+  }
+  .nav-give {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  /* Hero & Banners */
+  .hero {
+    min-height: auto;
+    padding: 40px 0 32px;
+  }
+  .hero-verse {
+    font-size: 1.15rem;
+    margin-bottom: 24px;
+  }
+  .hero-panel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  .hero-cta {
+    flex-direction: column;
+  }
+  .hero-cta .btn-primary, .hero-cta .btn-outline {
+    text-align: center;
+    width: 100%;
+  }
+  .page-banner {
+    padding: 40px 0 28px;
+  }
+  .page-banner h1 {
+    font-size: 1.75rem;
+  }
+
+  /* Card Grids */
+  .staff-grid, 
+  .staff-grid.board, 
+  .ministries-grid, 
+  .testimony-grid, 
+  .new-cta-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Layout Containers & Components */
   .book-list { columns: 1; }
+  .form-row { grid-template-columns: 1fr; gap: 14px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .give-panel {
+    padding: 24px 16px;
+  }
+  .give-method-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .expect-item {
+    gap: 12px;
+  }
+
+  .current-series {
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bulletin-archive-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }
