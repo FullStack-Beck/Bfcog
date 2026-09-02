@@ -1,11 +1,11 @@
 :root {
-  --bg: #FAFAF8;
-  --ink: #1E1E1E;
-  --ink-soft: #55554F;
-  --accent: #55554f;
-  --accent-deep: #2f2f2d;
-  --line: rgba(30,30,30,0.12);
-  --panel: #F1EFEA;
+  --bg: #F8F6F0;
+  --ink: #2B2922;
+  --ink-soft: #5C584E;
+  --accent: #5B6246;
+  --accent-deep: #3B3A32;
+  --line: rgba(43, 41, 34, 0.15);
+  --panel: #EFECE6;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -34,14 +34,14 @@ nav a:hover, nav a.active { color: var(--accent); }
    ========================================================== */
 
 /* Outer Shell */
+/* 1. Ensure hero height matches the aspect ratio of your background image */
 .hero-wrapper {
   position: relative;
   width: 100%;
-  height: auto;
-  min-height: auto;
+  min-height: 80vh; /* Ensures the container is tall enough to show the church */
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Keeps text anchored to the top */
   background-color: var(--bg);
 }
 
@@ -68,25 +68,44 @@ nav a:hover, nav a.active { color: var(--accent); }
   opacity: 1;
 }
 
-/* 2. Torn Paper Frame Overlay (Middle Layer) */
-.hero-frame-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* 3. Content Area (Top Layer) */
+/* 1. Remove max-width and centering to pin text to the top-left */
 .hero-content {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 40px 32px 0;
+  max-width: 100%; /* Spans full width so text can reach the true left edge */
+  margin: 0;        /* Removes centering margins */
+  padding: 32px 0 0 64px; /* Control exact distance from top and left bounds */
+}
+
+/* 2. Constrain text width so line wraps naturally instead of squishing */
+.hero-text-card {
+  padding-top: 0;
+  margin-top: 0;
+  max-width: 520px; /* Gives the large quote room to breathe */
+}
+
+/* 2. Position the background frame overlay properly */
+.hero-frame-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills container completely without breaking ratio */
+  object-position: top left; /* Locks top-left design details in place */
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-verse {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-style: italic;
+  font-weight: 500;
+  color: #2D231E;
+  line-height: 1.2;
+  margin: 4px 0 12px; /* Pulls verse up directly under the cross */
 }
 
 /* Grid layout keeping text on the top-left */
@@ -95,29 +114,6 @@ nav a:hover, nav a.active { color: var(--accent); }
   grid-template-columns: minmax(320px, 460px) 1fr;
   align-items: start;
   gap: 20px;
-}
-
-/* Top Paper Card (Text Container) */
-.hero-text-card {
-  padding-top: 20px;
-  max-width: 440px;
-}
-
-.cross-icon {
-  font-size: 1.4rem;
-  color: var(--accent-deep);
-  margin-bottom: 12px;
-}
-
-.hero-verse {
-  font-family: 'Fraunces', serif;
-  /* Increased font size range from clamp(1.4rem, 2vw, 1.8rem) */
-  font-size: clamp(1.8rem, 3.2vw, 2.6rem); 
-  font-style: italic;
-  font-weight: 500;
-  color: #2D231E;
-  line-height: 1.25;
-  margin: 10px 0 16px;
 }
 
 .hero-divider {
@@ -129,7 +125,7 @@ nav a:hover, nav a.active { color: var(--accent); }
 
 .hero-details {
   font-size: 0.85rem;
-  color: #ffffff;
+  color: #2c2626;
   line-height: 1.6;
   margin-bottom: 20px;
 }
