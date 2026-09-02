@@ -12,23 +12,35 @@
 
 <header>
   <div class="wrap nav-row">
-    <!-- Brand link returning to homepage -->
     <a href="index.html" class="brand">Bristow First Church of God</a>
-    <nav>
+    
+    <!-- Mobile Hamburger Button -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <!-- Navigation Menu (Slides out on mobile) -->
+    <nav id="navMenu">
+      <div class="mobile-nav-header">
+        <span class="mobile-brand">Bristow First Church of God</span>
+        <button class="nav-close" id="navClose" aria-label="Close menu">&times;</button>
+      </div>
       <ul>
-        <!-- Home link added -->
         <li><a href="index.html">Home</a></li>
         <li><a href="new.html">I'm New Here</a></li>
         <li><a href="teachings.html">Teachings</a></li>
         <li><a href="believe.html">What We Believe</a></li>
         <li><a href="staff.html">Staff</a></li>
         <li><a href="ministries.html">Ministries</a></li>
-        <li><a href="bulletin.html">Bulletin</a></li>
+        <li><a href="bulletin.html">Monthly Bulletin</a></li>
         <li><a href="testimonies.html">Testimonies</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="give.html" class="mobile-give-link">Give</a></li>
       </ul>
     </nav>
-    <a href="give.html" class="nav-give">Give</a>
+    <a href="give.html" class="nav-give desktop-only">Give</a>
   </div>
 </header>
 
@@ -125,6 +137,24 @@ function handleGivingSubmit(e) {
     </div>
   </div>
 </footer>
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navClose = document.getElementById('navClose');
+  const navMenu = document.getElementById('navMenu');
 
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.add('is-open');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+  }
+
+  if (navClose && navMenu) {
+    navClose.addEventListener('click', () => {
+      navMenu.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  }
+</script>
 </body>
 </html>
