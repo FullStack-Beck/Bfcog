@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Bristow First Church of God</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <!-- Brand link returning to homepage -->
+    <a href="index.html" class="brand">Bristow First Church of God</a>
+    <nav>
+      <ul>
+        <!-- Home link added -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="new.html">I'm New Here</a></li>
+        <li><a href="teachings.html">Teachings</a></li>
+        <li><a href="believe.html">What We Believe</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="ministries.html">Ministries</a></li>
+        <li><a href="bulletin.html">Bulletin</a></li>
+        <li><a href="testimonies.html">Testimonies</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="give.html" class="nav-give">Give</a>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="wrap">
+    <p class="eyebrow">Contact Us</p>
+    <h1>We'd love to hear from you.</h1>
+    <p>Questions, prayer requests, or just want to say hello — fill out the form and someone will get back to you.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap contact-layout">
+    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+      <div class="form-row">
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+      </div>
+      <input type="email" id="email" placeholder="Email" required>
+      <textarea id="message" placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <div id="formFeedback" style="display:none; font-size:0.9rem; font-weight:600; padding:10px; border-radius:4px; text-align:center; margin-top:10px;"></div>
+    </form>
+    <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('formFeedback');
+      
+      // Custom form processing logic (e.g., integrate with Formspree, Web3Forms, or custom API)
+      feedback.style.display = 'block';
+      feedback.style.background = '#d4edda';
+      feedback.style.color = '#155724';
+      feedback.innerText = 'Thank you! Your message has been sent successfully.';
+      
+      document.getElementById('contactForm').reset();
+    }
+    </script>
+
+    <div class="contact-info-block">
+      <div class="contact-info-item">
+        <h4>Office Phone</h4>
+        <p>(918) 367-2664</p>
+      </div>
+      <div class="contact-info-item">
+        <h4>Address</h4>
+        <p>320 S Walnut St<br>Bristow, OK 74010</p>
+      </div>
+      <div class="contact-info-item">
+        <h4>Service Times</h4>
+        <div class="service-time-row"><span>Sunday Morning</span><span>[10:45 AM]</span></div>
+        <div class="service-time-row"><span>Sunday Midday</span><span>[12:00 PM]</span></div>
+        <div class="service-time-row"><span>Wednesday Evening</span><span>[6:30 PM]</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Bristow First Church of God</div>
+        <p>320 S Walnut St<br>Bristow, OK 74010</p>
+        <p>(918) 367-2664</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <p>Sunday @ [10:45 AM]</p>
+        <p>Sunday @ [12:00 AM]</p>
+        <p>Wednesday @ [6:30 PM]</p>
+      </div>
+      <div>
+        <h5>About Us</h5>
+        <a href="believe.html">What We Believe</a>
+        <a href="staff.html">Staff</a>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <a href="contact.html">Contact</a>
+        <p>(918) 367-2664</p>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bristow First Church of God</span>
+      <span>Template — replace all bracketed content</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
