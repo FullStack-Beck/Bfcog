@@ -45,32 +45,43 @@
 </header>
 
 <section class="hero-wrapper">
-  <!-- 1. The background slideshow container (fills the right side) -->
+  <!-- Slideshow area on the right -->
   <div class="slideshow-container">
     <div class="slide active" style="background-image: url('slide1.jpg');"></div>
     <div class="slide" style="background-image: url('slide2.jpg');"></div>
-    <div class="slide" style="background-image: url('slide3.jpg');"></div>
   </div>
 
-  <!-- 2. The torn-paper frame overlay (Your PNG/SVG image with transparent right side) -->
-  <img src="content.png" class="hero-frame-overlay" alt="Hero background design" />
+  <!-- Torn Paper Frame Overlay -->
+  <img src="torn-paper-frame.png" class="hero-frame-overlay" alt="Torn paper layout" />
 
-  <!-- 3. The hero content positioned on top of the left side -->
-  <div class="wrap hero-content">
-    <div class="hero-text-block">
-      <div class="cross-icon">†</div>
-      <span class="eyebrow">WELCOME TO BRISTOW FIRST</span>
-      <h1 class="hero-verse">“Come to me, all you who are weary and burdened, and I will give you rest.”</h1>
+  <!-- Content Layer -->
+  <div class="hero-content">
+    <div class="hero-grid">
       
-      <p class="hero-info">
-        <strong>Sundays @ 10:45 AM • Wednesdays @ 6:30 PM</strong><br>
-        320 S Walnut St, Bristow, OK 74010
-      </p>
+      <!-- Top Left: Verse & Info (Keeps text inside the paper section) -->
+      <div class="hero-text-card">
+        <div class="cross-icon">†</div>
+        <span class="eyebrow">WELCOME TO BRISTOW FIRST</span>
+        <h1 class="hero-verse">“Come to me, all you who are weary and burdened, and I will give you rest.”</h1>
+        
+        <div class="hero-divider"></div>
 
-      <div class="hero-cta">
-        <a href="#visit" class="btn-primary">Plan A Visit</a>
-        <a href="#live" class="btn-outline-dark">Watch Live</a>
+        <p class="hero-details">
+          <strong>Sundays @ 10:45 AM • Wednesdays @ 6:30 PM</strong><br>
+          320 S Walnut St, Bristow, OK 74010
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#visit" class="btn-solid-brown">Plan A Visit</a>
+          <a href="#live" class="btn-outline-brown">Watch Live</a>
+        </div>
       </div>
+
+      <!-- Bottom Left: Church Building Photo -->
+      <div class="hero-building-image">
+        <img src="church-building.jpg" alt="Bristow First Church Building" />
+      </div>
+
     </div>
   </div>
 </section>
