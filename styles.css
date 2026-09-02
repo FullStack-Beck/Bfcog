@@ -2,8 +2,8 @@
   --bg: #FAFAF8;
   --ink: #1E1E1E;
   --ink-soft: #55554F;
-  --accent: #6B4A3A;
-  --accent-deep: #543A2E;
+  --accent: #55554f;
+  --accent-deep: #2f2f2d;
   --line: rgba(30,30,30,0.12);
   --panel: #F1EFEA;
 }
@@ -129,7 +129,7 @@ nav a:hover, nav a.active { color: var(--accent); }
 
 .hero-details {
   font-size: 0.85rem;
-  color: #c97b4d;
+  color: #ffffff;
   line-height: 1.6;
   margin-bottom: 20px;
 }
