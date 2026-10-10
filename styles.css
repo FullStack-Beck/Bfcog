@@ -50,7 +50,7 @@ nav a:hover, nav a.active { color: var(--accent); }
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 60%;
   height: 100%;
   z-index: 1;
 }
