@@ -50,7 +50,8 @@ nav a:hover, nav a.active { color: var(--accent); }
   position: absolute;
   top: 0;
   right: 0;
-  width: 60%;
+  left: 38%; /* Stretches the slideshow leftward to 38% from the left boundary */
+  width: auto; /* Allow left & right constraints to control the width */
   height: 100%;
   z-index: 1;
 }
